@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>질문 폐급 테스트</title>
+  <meta name="description" content="12문항으로 알아보는 나의 직장 질문 습관. 오너십·사전고민·전달력·눈치·질문용기 5축 진단.">
+  <meta property="og:title" content="질문 폐급 테스트">
+  <meta property="og:description" content="당신의 질문, 상사에게는 어떻게 보일까요?">
+  <meta property="og:image" content="images/evolution.svg">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- 시작 화면 -->
+    <section id="screen-intro" class="screen is-active" aria-labelledby="intro-title">
+      <p class="eyebrow">직장인 질문 습관 진단</p>
+      <h1 id="intro-title" class="intro-title">질문 폐급 테스트</h1>
+      <p class="intro-lead">당신의 질문, 상사에게는 어떻게 보일까요?<br>12개 상황에서 내가 실제로 할 행동을 골라주세요.</p>
+      <ul class="axis-chips" id="axis-chips"></ul>
+      <figure class="img-slot img-slot--cover">
+        <img src="images/evolution.svg" alt="감자에서 질문 장인까지, 질문 습관 진화 단계" width="1200" height="400">
+      </figure>
+      <div class="cta-bar">
+        <p class="meta">약 3분 · 12문항</p>
+        <button type="button" class="btn btn-primary" id="btn-start">테스트 시작하기</button>
+      </div>
+    </section>
+
+    <!-- 문항 화면 -->
+    <section id="screen-quiz" class="screen" aria-live="polite">
+      <header class="quiz-head">
+        <button type="button" class="btn-back" id="btn-back" aria-label="이전 문항">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="12" id="progress">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="progress-count" id="progress-count">1/12</span>
+      </header>
+      <p class="section-label" id="section-label"></p>
+      <h2 class="q-title"><span class="q-num" id="q-num">Q1</span><span id="q-text"></span></h2>
+      <div class="options" id="options"></div>
+    </section>
+
+    <!-- 결과 화면 -->
+    <section id="screen-result" class="screen" aria-labelledby="result-grade">
+      <div class="card grade-card">
+        <figure class="img-slot img-slot--grade">
+          <img id="grade-img" alt="" width="400" height="400">
+        </figure>
+        <p class="eyebrow">나의 등급</p>
+        <h2 class="grade-name" id="result-grade"></h2>
+        <p class="grade-score"><strong id="result-score"></strong><span>/ 100점</span></p>
+        <p class="grade-comment" id="result-grade-comment"></p>
+        <figure class="evolution">
+          <div class="evolution-track">
+            <img src="images/evolution.svg" alt="" width="1200" height="400">
+            <span class="evolution-marker" id="evolution-marker" aria-hidden="true"></span>
+          </div>
+          <figcaption class="evolution-caption" id="evolution-caption"></figcaption>
+        </figure>
+      </div>
+
+      <div class="card type-card">
+        <p class="eyebrow" id="result-type-weak"></p>
+        <h3 class="type-name" id="result-type"></h3>
+        <p class="type-headline" id="result-type-headline"></p>
+        <p class="type-body" id="result-type-body"></p>
+        <ul class="type-tips" id="result-type-tips"></ul>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">5축 진단</h3>
+        <div class="radar" id="radar"></div>
+        <ul class="axis-bars" id="axis-bars"></ul>
+      </div>
+
+      <div class="card template-card">
+        <h3 class="card-title">개선 템플릿</h3>
+        <ol class="template-steps" id="template-steps"></ol>
+        <div class="before-after" id="before-after">
+          <div class="ba ba-before">
+            <span class="ba-label">이런 질문을 함</span>
+            <p id="ba-before"></p>
+          </div>
+          <div class="ba ba-after">
+            <span class="ba-label">이렇게 바꾸면 됨</span>
+            <p id="ba-after"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-bar">
+        <button type="button" class="btn btn-primary" id="btn-restart">다시하기</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
